@@ -1,0 +1,7 @@
+python scripts/load_test.py --challenge --concurrency 5
+Challenge: day13-k4-l3b-monitoring-llmops-v1 | Cohort: K4
+[200] req-72ace4b1 | monitoring | 2983.5ms
+[200] req-557acfb0 | monitoring | 2985.4ms
+[200] req-ac3bde05 | monitoring | 2983.5ms
+[200] req-e8a01971 | monitoring | 2983.5ms
+[200] req-ff28e6f2 | monitoring | 2983.1ms

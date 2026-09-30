@@ -1,0 +1,22 @@
+Source: actual response_sent in data/logs.jsonl; payload omitted to keep the private challenge query out of submitted evidence.
+{
+  "service": "api",
+  "latency_ms": 2836,
+  "ttft_ms": 50,
+  "tokens_in": 36,
+  "tokens_out": 134,
+  "cost_usd": 0.002118,
+  "quality_score": 0.9,
+  "trace_id": "106939ffb1db3460d70f968be5fef36d",
+  "tool_name": "retrieval",
+  "tool_success": true,
+  "event": "response_sent",
+  "feature": "monitoring",
+  "model": "claude-sonnet-4-5",
+  "env": "dev",
+  "user_id_hash": "c3a24a72d92a",
+  "correlation_id": "req-5c7c1266",
+  "session_id": "d8a4480772d6",
+  "level": "info",
+  "ts": "2026-09-30T04:13:00.917692Z"
+}

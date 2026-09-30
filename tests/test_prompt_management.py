@@ -86,7 +86,7 @@ def test_langfuse_prompt_version_and_label_are_resolved(monkeypatch) -> None:
             "label": "candidate",
             "type": "text",
             "fallback": DEFAULT_PROMPT_TEMPLATE,
-            "cache_ttl_seconds": 60,
+            "cache_ttl_seconds": 0,
             "fetch_timeout_seconds": 2,
             "max_retries": 0,
         },

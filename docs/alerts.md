@@ -22,39 +22,21 @@ Ví dụ dưới đây minh họa mức độ cụ thể cần có. Học viên 
 
 ## Alert 1
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
-- Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+- Tên: `HighLatencyP95`; severity: `warning`; duration: `5m`; Slack: `#k4-l3b-alerts`; owner: `student-2A202602889`.
+- SLI/SLO: P95 của `response_sent.latency_ms`; cảnh báo khi P95 > 3000 ms trong 5 phút. Người dùng chờ câu trả lời lâu hơn.
+- Kiểm tra: (1) Xác định phút P95/P99 tăng trên panel Latency. (2) Lọc `response_sent` có latency cao trong `data/logs.jsonl`, lấy `correlation_id`. (3) Mở trace cùng ID và so thời lượng retrieval/generation.
+- Mitigation: nếu generation tăng sau prompt release, rollback label `production`; nếu retrieval tăng, khôi phục dịch vụ retrieval/cấu hình liên quan. Xác nhận P95 trở lại dưới ngưỡng.
 
 ## Alert 2
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
-- Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+- Tên: `HighErrorRate`; severity: `critical`; duration: `5m`; Slack: `#k4-l3b-alerts`; owner: `student-2A202602889`.
+- SLI/SLO: tỷ lệ `request_failed / request_received`; cảnh báo khi > 2% trong 5 phút. Người dùng không nhận được câu trả lời.
+- Kiểm tra: (1) Xem panel Errors để xác nhận tỷ lệ và loại lỗi. (2) Lọc `request_failed` trong cùng khoảng, lấy `error_type` và `correlation_id`. (3) Mở trace cùng ID để tìm span lỗi.
+- Mitigation: rollback thay đổi gần nhất liên quan span lỗi; kiểm tra dependency trước khi khôi phục traffic. Xác nhận error rate giảm.
 
 ## Alert 3
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
-- Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+- Tên: `LowRetrievalSuccess`; severity: `warning`; duration: `5m`; Slack: `#k4-l3b-alerts`; owner: `student-2A202602889`.
+- SLI/SLO: tỷ lệ `tool_success == true` trên các request có `tool_success` được ghi; cảnh báo khi < 90% trong 5 phút. Câu trả lời thiếu context hoặc lỗi.
+- Kiểm tra: (1) Xem retrieval success và error breakdown trong panel Errors. (2) Lọc log `tool_name=retrieval`, `tool_success=false`; lấy `correlation_id`. (3) Mở retrieval span cùng ID để xác định timeout/lỗi.
+- Mitigation: khôi phục vector store hoặc cấu hình retrieval; tạm giảm tải nếu dependency quá tải. Xác nhận tỷ lệ thành công trở lại ít nhất 90%.

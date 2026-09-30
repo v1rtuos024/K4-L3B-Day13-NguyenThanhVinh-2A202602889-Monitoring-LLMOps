@@ -1,0 +1,55 @@
+{
+  "project": "day13-k4-l3b-2A202602889",
+  "traces": [
+    {
+      "correlation_id": "req-e01dfbaa",
+      "trace_id": "5295ba3878e5d219eb61701ca4cf9805",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-3da087a1",
+      "trace_id": "711d8f9f655dd9734b011b11d91c133e",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-268c7269",
+      "trace_id": "1360539ec869fb7200ec70fbbe8d1afa",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-96e63d29",
+      "trace_id": "556f69320ca9b76bf72a65f2d80c551b",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-6deae7cc",
+      "trace_id": "18672a517298e91bbb1e9de3c2bc5002",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-646ff34d",
+      "trace_id": "df1cdbc68914131fd90e4262be5d4d0c",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-a452b76f",
+      "trace_id": "ea09962a3491e97ca9ae41ea60b68ec6",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-d0c49dc6",
+      "trace_id": "f4a1b1ebafb2d5ac927f7cf63c25ab11",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-fb81dfcb",
+      "trace_id": "c8da63d0446de9f6010c00b7448b6076",
+      "input_output_empty": true
+    },
+    {
+      "correlation_id": "req-d454d12b",
+      "trace_id": "4559cf2a2957a83ac12a251483b0eb37",
+      "input_output_empty": true
+    }
+  ]
+}

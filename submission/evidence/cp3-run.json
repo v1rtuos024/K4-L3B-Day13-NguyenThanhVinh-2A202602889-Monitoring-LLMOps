@@ -1,0 +1,193 @@
+{
+  "challenge_id": "day13-k4-l3b-monitoring-llmops-v1",
+  "challenge_threshold_ms": 2000,
+  "initial_health": {
+    "ok": true,
+    "tracing_enabled": true,
+    "incidents": {
+      "rag_slow": false,
+      "tool_fail": false,
+      "cost_spike": false
+    }
+  },
+  "phases": {
+    "baseline": {
+      "started_at": "2026-09-30T04:12:50.119201Z",
+      "ended_at": "2026-09-30T04:12:54.245429Z",
+      "metrics": {
+        "latency": {
+          "P50": 281.0,
+          "P95": 828.0,
+          "P99": 828.0,
+          "TTFT P95": 50.0
+        },
+        "traffic": {
+          "requests": 10,
+          "peak requests/min": 10
+        },
+        "errors": {
+          "error rate": 0.0,
+          "retrieval success": 100.0,
+          "types": {}
+        },
+        "cost": {
+          "total": 0.019239,
+          "peak USD/min": 0.019239
+        },
+        "tokens": {
+          "input": 338,
+          "output": 1215
+        },
+        "quality": {
+          "mean": 0.88
+        },
+        "series": {
+          "2026-09-30T04:12": {
+            "traffic": 10,
+            "cost": 0.019239
+          }
+        },
+        "response_count": 10
+      },
+      "correlation_ids": [
+        "req-e01dfbaa",
+        "req-3da087a1",
+        "req-268c7269",
+        "req-96e63d29",
+        "req-6deae7cc",
+        "req-646ff34d",
+        "req-a452b76f",
+        "req-d0c49dc6",
+        "req-fb81dfcb",
+        "req-d454d12b"
+      ]
+    },
+    "incident": {
+      "started_at": "2026-09-30T04:12:54.793646Z",
+      "ended_at": "2026-09-30T04:13:09.315397Z",
+      "metrics": {
+        "latency": {
+          "P50": 2781.0,
+          "P95": 2836.0,
+          "P99": 2836.0,
+          "TTFT P95": 50.0
+        },
+        "traffic": {
+          "requests": 5,
+          "peak requests/min": 3
+        },
+        "errors": {
+          "error rate": 0.0,
+          "retrieval success": 100.0,
+          "types": {}
+        },
+        "cost": {
+          "total": 0.009795,
+          "peak USD/min": 0.007425000000000001
+        },
+        "tokens": {
+          "input": 175,
+          "output": 618
+        },
+        "quality": {
+          "mean": 0.8400000000000001
+        },
+        "series": {
+          "2026-09-30T04:12": {
+            "traffic": 2,
+            "cost": 0.00237
+          },
+          "2026-09-30T04:13": {
+            "traffic": 3,
+            "cost": 0.007425000000000001
+          }
+        },
+        "response_count": 5
+      },
+      "correlation_ids": [
+        "req-451bf7a1",
+        "req-5c7c1266",
+        "req-ba6fe8ac",
+        "req-795e66e4",
+        "req-d653d055"
+      ]
+    },
+    "recovery": {
+      "started_at": "2026-09-30T04:17:38.661897Z",
+      "ended_at": "2026-09-30T04:17:42.200684Z",
+      "metrics": {
+        "latency": {
+          "P50": 546.0,
+          "P95": 949.0,
+          "P99": 949.0,
+          "TTFT P95": 50.0
+        },
+        "traffic": {
+          "requests": 5,
+          "peak requests/min": 5
+        },
+        "errors": {
+          "error rate": 0.0,
+          "retrieval success": 100.0,
+          "types": {}
+        },
+        "cost": {
+          "total": 0.010515,
+          "peak USD/min": 0.010515
+        },
+        "tokens": {
+          "input": 175,
+          "output": 666
+        },
+        "quality": {
+          "mean": 0.8400000000000001
+        },
+        "series": {
+          "2026-09-30T04:17": {
+            "traffic": 5,
+            "cost": 0.010515
+          }
+        },
+        "response_count": 5
+      },
+      "correlation_ids": [
+        "req-72ace4b1",
+        "req-557acfb0",
+        "req-e8a01971",
+        "req-ac3bde05",
+        "req-ff28e6f2"
+      ]
+    }
+  },
+  "selected_request": {
+    "service": "api",
+    "latency_ms": 2836,
+    "ttft_ms": 50,
+    "tokens_in": 36,
+    "tokens_out": 134,
+    "cost_usd": 0.002118,
+    "quality_score": 0.9,
+    "trace_id": "106939ffb1db3460d70f968be5fef36d",
+    "tool_name": "retrieval",
+    "tool_success": true,
+    "event": "response_sent",
+    "feature": "monitoring",
+    "model": "claude-sonnet-4-5",
+    "env": "dev",
+    "user_id_hash": "c3a24a72d92a",
+    "correlation_id": "req-5c7c1266",
+    "session_id": "d8a4480772d6",
+    "level": "info",
+    "ts": "2026-09-30T04:13:00.917692Z"
+  },
+  "abnormal_request_count": 5,
+  "recovery_health": {
+    "ok": true,
+    "tracing_enabled": true,
+    "incidents": {
+      "rag_slow": false,
+      "tool_fail": false,
+      "cost_spike": false
+    }
+  }
+}

@@ -40,3 +40,19 @@ def tracing_enabled() -> bool:
     return LANGFUSE_SDK_AVAILABLE and bool(
         os.getenv("LANGFUSE_PUBLIC_KEY") and os.getenv("LANGFUSE_SECRET_KEY")
     )
+
+
+class _NoopObservation:
+    def update(self, **kwargs: Any) -> None:
+        pass
+
+
+@contextmanager
+def child_observation(client: Any, *, enabled: bool, **kwargs: Any):
+    """Create a nested SDK v4 observation when tracing is configured."""
+    start = getattr(client, "start_as_current_observation", None) if enabled else None
+    if start is None:
+        yield _NoopObservation()
+    else:
+        with start(**kwargs) as observation:
+            yield observation
