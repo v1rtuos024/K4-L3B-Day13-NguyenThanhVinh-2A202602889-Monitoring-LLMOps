@@ -3,7 +3,7 @@
 ## 1. Thông tin
 - Họ tên: Nguyễn Thành Vinh; MSSV: **2A202602889**; lớp: **K4-L3B**.
 - Repository: https://github.com/v1rtuos024/K4-L3B-Day13-NguyenThanhVinh-2A202602889-Monitoring-LLMOps
-- Commit SHA cuối: **chưa tạo**.
+- Commit SHA cuối: **854488cbf0ddc2e822517113a8e0e090e8ea88f9**.
 - Challenge ID: **day13-k4-l3b-monitoring-llmops-v1**. File chính thức được Gitignore.
 - Langfuse project: **day13-k4-l3b-2A202602889**.
 
